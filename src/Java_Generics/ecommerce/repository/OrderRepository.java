@@ -1,4 +1,4 @@
 package Java_Generics.ecommerce.repository;
 
-public class OderRepository {
+public class OrderRepository {
 }
