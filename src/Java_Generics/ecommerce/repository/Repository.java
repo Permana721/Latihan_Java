@@ -1,4 +1,5 @@
 package Java_Generics.ecommerce.repository;
 
-public interface Repository {
+public interface Repository<T> {
+
 }
