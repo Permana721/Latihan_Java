@@ -1,4 +1,5 @@
 package Java_Generics.ecommerce.exception;
 
-public class ProductNotFoundException {
+public class ProductNotFoundException extends Exception{
+
 }
