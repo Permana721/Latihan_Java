@@ -1,4 +1,4 @@
-package Java_Generics._1_ECommerce.Product;
+package Java_Generics._1_ecommerce.domain;
 
 public class Electronics extends Product{
 }
