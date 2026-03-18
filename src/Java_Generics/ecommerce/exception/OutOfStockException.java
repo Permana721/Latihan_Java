@@ -1,7 +1,7 @@
 package Java_Generics.ecommerce.exception;
 
 public class OutOfStockException extends RuntimeException {
-  public OutOfStockException(String message) {
-    super(message);
-  }
+    public OutOfStockException(String message) {
+        super(message);
+    }
 }
