@@ -1,12 +1,15 @@
 package Java_Generics.ecommerce.repository;
 
 import Java_Generics.ecommerce.domain.product.Product;
+import Java_Generics.ecommerce.exception.ProductNotFoundException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepository implements Repository<Product> {
     private ArrayList<Product> allProduct = new ArrayList<>();
     private int nextId = 1;
+
 
     @Override
     public void save(Product item) {
@@ -15,16 +18,20 @@ public class ProductRepository implements Repository<Product> {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(int id) throws ProductNotFoundException {
         allProduct.removeIf(p -> p.getId() == id);
+        throw new ProductNotFoundException(id);
     }
 
     @Override
-    public Product findById(int id) {
-        for (Product p : allProduct) {
-            if (p.getId() == id) return p;
+    public Product findByName(String name) throws ProductNotFoundException {
+        for (Product product : allProduct) {
+            if(product.getName().equalsIgnoreCase(name)){
+                product.printInfo();
+                return product;
+            }
         }
-        return null;
+        throw new ProductNotFoundException(name);
     }
 
     @Override
