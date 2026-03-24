@@ -1,4 +1,5 @@
 package Java_Generics.ecommerce.repository;
+import Java_Generics.ecommerce.domain.product.Product;
 import Java_Generics.ecommerce.domain.user.User;
 
 import java.util.ArrayList;
@@ -20,10 +21,8 @@ public class UserRepository implements Repository<User> {
     }
 
     @Override
-    public User findById(int id) {
-        for (User p : allUser) {
-            if (p.getId() == id) return p;
-        }
+    public Product findByName(String name) {
+
         return null;
     }
 
