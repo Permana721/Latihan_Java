@@ -26,7 +26,6 @@ public class UserRepository implements Repository<User> {
         return null;
     }
 
-    @Override
     public User findUserById(int id) throws InvalidUserException {
         if (id <= 0) {
             throw new InvalidUserException("Id tidak valid: " + id);
