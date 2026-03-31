@@ -4,17 +4,17 @@ public class User {
     private int id;
     private String name;
     private String email;
-    private int balance;
+    private int saldo;
 
     public User(){
 
     }
 
-    public User(int id, String name, String email, int balance) {
+    public User(int id, String name, String email, int saldo) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.balance = balance;
+        this.saldo = 0;
     }
 
     public int getId() {
@@ -41,16 +41,16 @@ public class User {
         this.email = email;
     }
 
-    public int getBalance() {
-        return balance;
+    public int getSaldo() {
+        return saldo;
     }
 
-    public void setBalance(int balance) {
-        this.balance = balance;
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 
     public void printInfo(){
         System.out.println("Nama: " + name);
-        System.out.println("Saldo: " + balance);
+        System.out.println("Saldo: " + saldo);
     }
 }
