@@ -8,4 +8,8 @@ public interface UserService {
     void register(String name, String email);
     void deleteUser(int id);
     List<User> getAllUsers();
+
+    void tambahSaldo(int userId, int jumlah);
+
+    User login(String name, String email);
 }
