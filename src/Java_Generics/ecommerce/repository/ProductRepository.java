@@ -1,6 +1,8 @@
 package Java_Generics.ecommerce.repository;
 
 import Java_Generics.ecommerce.domain.product.Product;
+import Java_Generics.ecommerce.domain.user.User;
+import Java_Generics.ecommerce.exception.InvalidUserException;
 import Java_Generics.ecommerce.exception.ProductNotFoundException;
 
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ public class ProductRepository implements Repository<Product> {
     }
 
     @Override
-    public Product findByName(String name) throws ProductNotFoundException {
+    public Product findProductByName(String name) throws ProductNotFoundException {
         for (Product product : allProduct) {
             if(product.getName().equalsIgnoreCase(name)){
                 product.printInfo();
@@ -32,6 +34,11 @@ public class ProductRepository implements Repository<Product> {
             }
         }
         throw new ProductNotFoundException(name);
+    }
+
+    @Override
+    public User findUserById(int id) throws InvalidUserException {
+        return null;
     }
 
     @Override
