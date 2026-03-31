@@ -10,7 +10,5 @@ import java.util.List;
 public interface Repository<T> {
     void save(T item);
     void delete(int id) throws ProductNotFoundException;
-    Product findProductByName(String name) throws ProductNotFoundException;
-    User findUserById(int id) throws InvalidUserException;
     List<T> findAll();
 }
