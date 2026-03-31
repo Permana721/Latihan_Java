@@ -25,20 +25,11 @@ public class ProductRepository implements Repository<Product> {
         throw new ProductNotFoundException(id);
     }
 
-    @Override
     public Product findProductByName(String name) throws ProductNotFoundException {
-        for (Product product : allProduct) {
-            if(product.getName().equalsIgnoreCase(name)){
-                product.printInfo();
-                return product;
-            }
+        for (Product p : allProduct) {
+            if (p.getName().equalsIgnoreCase(name)) return p;
         }
         throw new ProductNotFoundException(name);
-    }
-
-    @Override
-    public User findUserById(int id) throws InvalidUserException {
-        return null;
     }
 
     @Override
